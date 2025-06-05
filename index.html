@@ -135,21 +135,28 @@
         <div class="column is-full-width">
           <h2 class="title is-3">The HiBerNAC Model</h2>
           <div class="content has-text-justified has-text-centered">
-            <img src="static/images/HiBerNAC_model.jpg" />
+            <img src="static/images/hibernac_model.jpg" />
             <p>
-              We train HiBerNAC by fine-tuning a pretrained <a href="https://arxiv.org/abs/2402.07865">Prismatic-7B VLM</a>. Our model consists of three key elements:
-              (1) a <strong>fused visual encoder</strong>, consisting of a SigLIP and a DinoV2 backbone, that maps image inputs to a number of ``image patch embeddings'', 
-              (2) a <strong>projector</strong> that takes the output embeddings of the visual encoder and maps them into the input space of a large language model, and 
-              (3) a Llama 2 7B <strong>language model backbone</strong> that predicts tokenized output actions. These tokens get decoded into continuous output actions that
-              can be directly executed on the robot.
-            </p>
-            <p>
-              To train HiBerNAC, we curate a dataset of 970k robot manipulation trajectories from the <a href="https://robotics-transformer-x.github.io/">Open X-Embodiment (OpenX) dataset</a>.
-              Our dataset spans a wide range of tasks, scenes and robot embodiments. We train HiBerNAC on a cluster of 64 A100 GPUs for 15 days. The trained model checkpoints 
-              can be <a href="https://huggingface.co/HiBerNAC">downloaded from HuggingFace</a> and used with a few lines of code.
+                Our brain-inspired planning and manipulation framework models neural cognition structure as a multimodal multiagent 
+                system, structured to emulate neural specialization from the human brain, as illustrated in the figure. For complex 
+                and long-horizon tasks, the system dynamically activates distinct agents for processing language, vision, and 
+                episodic memory inputs. These agents function analogously to sensory cortices, extracting salient features and 
+                contextual information. The fused multimodal representations are routed to a central planning module inspired by the 
+                prefrontal cortex, where high-level decision-making and task decomposition occur. This output is further refined 
+                through a correction mechanism modeled on the inferior olivary nucleus, introducing predictive error feedback for 
+                robust adaptation. In contrast, simple or reactive tasks bypass high-level planning and instead utilize a streamlined 
+                single-agent pathway akin to spinal or reflex arcs in biological systems. These rely on a 'past work memory' module 
+                that recalls previously successful execution patterns, slightly modified to fit current contexts, ensuring both rapid 
+                response and task relevance. Task routing between these two pathways is governed by a context-aware task classifier 
+                that estimates cognitive load and task complexity. This architecture supports real-time adaptability and efficiency, 
+                integrating deliberative and reflexive behaviors. The structure graph accompanying this section outlines these modules 
+                and their interactions, reflecting both the functional and anatomical parallels to the human brain. The system's 
+                implementation integrates three interacting components: (1) a multi-agent neural structure for high-level planning, 
+                (2) an asynchronous pipeline for hierarchical task management, and (3) a reactive VLA system for real-time control 
+                execution.
             </p>
     
-            <!-- <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
+            <h3 class="title is-4">Metrics for Real-to-Sim Evaluation</h3>
             <img src="static/images/metrics.png" />
             <p>
               An effective & useful simulation-based evaluation should demonstrate <strong>good correlations in policy ranking & performance</strong> with real evaluations.
@@ -204,7 +211,7 @@
                     </video>
                     <p >Control with SysID</p>
                   </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -660,30 +667,6 @@
         </div>
       </section>
 
-
-      <footer class="footer">
-        <div class="container">
-          <!-- <div class="content has-text-centered">
-            <a class="icon-link" href="https://arxiv.org/pdf/2210.05714.pdf">
-              <i class="fas fa-file-pdf"></i>
-            </a>
-            <a class="icon-link" href="" class="external-link" disabled>
-              <i class="fab fa-github"></i>
-            </a>
-          </div> -->
-          <div class="columns is-centered">
-            <div class="column is-8">
-              <div class="content">
-                <p> Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> under a <a
-                    href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
-                    International</a>
-                </p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer> -->
 
 </body>
 
